@@ -1,0 +1,7 @@
+1. Start the new Foksonomy module
+
+module-starter --module=Folksonomy \
+               --builder=Module::Build \
+               --author="Todd W. Harris, Ph.D." \
+               --email=toddwharris@gmail.com \
+               --verbose

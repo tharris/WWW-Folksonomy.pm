@@ -1,0 +1,25 @@
+body {  background-color: white; }
+
+#folksonomy {
+        border:1px solid grey;
+        float:left;
+        width:33%;
+}
+
+#folksonomy .byline {
+       text-transform:italics;
+       color:gray;
+}
+
+#folksonomy #usertags {
+        float:left;
+        width:33%;
+}
+
+#folksonomy #publictags {
+        float:left;
+        width:33% fixed;
+}
+
+#folksonomy .electronictags {
+}

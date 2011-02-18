@@ -1,0 +1,59 @@
+#!/usr/bin/perl -w
+
+# This is a demonstration CGI of WWW::Folksonomy.  It expects the
+# default database schema to be in place.  In addition it hardcodes
+# the user id and generates a random object ID from a list of 20
+# possible options.
+
+use strict;
+use CGI;
+use WWW::Folksonomy;
+
+
+my @fake_objects = (
+		    {
+		     name        => 'object01',
+		     class       => 'animals',
+		     description => 'a golden retriever',
+		     attribution => '',
+		     url         => '',
+		     title       => '',
+		    }
+		   );
+
+print header();
+print start_html({-title => 'WWW::Folksonomy Demo',
+		  -style => { -src => '/folksonomy/css/folksonomy.css'}});
+
+display_index();
+print end_html();
+exit;
+
+# A simple index listing all available objects
+sub display_index {
+  my $url = url();
+  print h3('Image index');
+  my $c;
+  print start_ul();
+  foreach (@fake_objects) {
+    my $title = $_->{title};
+    print li(a({-href=>"$url?image=" . $c++},$title));
+  }
+  print end_ul();
+}
+
+
+
+sub folksonomy {
+  print start_div({-id => 'folksonomy'});
+  print div({-id       => 'usertags'},
+	    span({-class=>'byline'},
+		 'Your tags (private tags underlined)'));
+  print div({-id       => 'publictags'},
+	    span({-class=>'byline'},
+		 'Most popular public tags'));
+  print div({-id       => 'electronictags'},
+	    span({-class=>'byline'},
+		 'Electronically-assigned tags'));
+  print end_div();
+}

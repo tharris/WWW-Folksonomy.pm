@@ -1,0 +1,78 @@
+WWW-Folksonomy version 0.0.1
+
+[ REPLACE THIS...
+
+  The README is used to introduce the module and provide instructions on
+  how to install the module, any machine dependencies it may have (for
+  example C compilers and installed libraries) and any other information
+  that should be understood before the module is installed.
+
+  A README file is required for CPAN modules since CPAN extracts the
+  README file from a module distribution so that people browsing the
+  archive can use it get an idea of the modules uses. It is usually a
+  good idea to provide version information here so that people can
+  decide whether fixes for the module are worth downloading.
+]
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+
+Alternatively, to install with Module::Build, you can use the following commands:
+
+    perl Build.PL
+    ./Build
+    ./Build test
+    ./Build install
+
+
+
+DEPENDENCIES
+
+None.
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2007, Todd W. Harris
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+
+
+
+
+
+
+Modify user table so that it only includes user-id - assume other information stored in separate DB
+
+
+TO-DO
+1. User authentication
+	Apache::Session::mysql for storing session info
+	CGI::SEssion supports drivers
+	CGI::Sesson:;Auth
+	(How to actually do the login?)
+
+
+2. HTML snippets in CGI that generate panes
+	Template::Toolkit approaches
+	
+	See: http://www.perl.com/pub/a/2003/07/15/nocode.html
+
+3. HTML summary pages
+
+4. AJAXified forms:
+	- Logging in, creating new user
+	- adding a tag
+
+   http://search.cpan.org/~kmcgrath/HTML-AjaxTags-0.04/lib/HTML/AjaxTags.pm
+
